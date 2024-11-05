@@ -1,0 +1,1 @@
+// Hiểu đơn giản là biến dùng chung
