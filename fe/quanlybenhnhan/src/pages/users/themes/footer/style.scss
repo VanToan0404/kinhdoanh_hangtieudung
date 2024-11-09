@@ -1,17 +1,115 @@
 @use "sass:map";
-.footer{
-    .footer__about{
-    margin-bottom: 30px;
-    .footer__about__logo{
-        margin-bottom: 15px;
-        display: inline-block;
+
+.footer {
+    background: #f3f6fa;
+    padding-top: 70px;
+    padding-bottom: 0;
+
+    .footer__about {
+        margin-bottom: 30px;
+
+        .footer__about__logo {
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        ul li {
+            font-size: 14px;
+            color: #008874;
+            line-height: 36px;
+            list-style: none;
+        }
     }
-     ul li{
-        font-size: 16px;
+
+    .footer__widget {
+        margin-bottom: 30px;
+        overflow: hidden;
+
+        h6 {
+            color: #008874;
+            margin-bottom: 16px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        ul {
+            float: left;
+            width: 50%;
+        }
+
+        li {
+            list-style: none;
+
+            a {
+                color: #008874;
+                font-size: 14px;
+                line-height: 32px;
+                text-decoration: none;
+            }
+        }
+
+    }
+
+    p {
+        font-size: 14px;
         color: #008874;
-        line-height: 36px;
-        list-style: none;
+        margin-bottom: 30px;
     }
+
+    form {
+        margin-bottom: 30px;
+
+        .input-group {
+            display: flex;
+            align-items: center;
+
+            input {
+                width: 90%;
+                font-size: 16px;
+                padding-left: 20px;
+                color: #008874;
+                height: 46px;
+                border: 1px solid #ededed;
+            }
+
+            ::placeholder {
+                color: #008874;
+            }
+        }
+
+        button {
+            min-width: max-content;
+            padding: 0 26px;
+            height: 46px;
+        }
+
+
     }
-    
+
+    .footer__widget__social {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        margin-top: 30px;
+        div {
+
+            :hover {
+                background: #008874;
+                color: #ffff;
+                border-color: #ffff;
+            }
+            svg{
+                font-size: 20px;
+                padding: 10px;
+                color: #404040;
+                border: 1px solid #ededed;
+                border-radius: 50%;
+                transition: all 0.3s;
+                background: #ffff;
+                cursor: pointer;
+            }
+
+        }
+    }
+
 }

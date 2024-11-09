@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import { IoLogoInstagram,IoLogoLinkedin } from "react-icons/io";
 import { BsFacebook } from "react-icons/bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-const foodter = () => {
+const footer = () => {
     return (<>
-        <foodter className="footer">
+        <footer className="footer">
             <div className="container">
                 <div className="row">
-                    <div className="col-lg-3">
+                    <div className="col-lg-3 col-md-6 .col-sm-6 col-xs-12">
                         <div className="footer__about">
                             <h1 className="footer__about__logo">
                                 SIVI shop
@@ -27,8 +27,8 @@ const foodter = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className="col-lg-6">
-                        <div className="footer__abouut__widget">
+                    <div className="col-lg-6 col-md-6 .col-sm-6 col-xs-12">
+                        <div className="footer__widget">
                             <h6>Cữa hàng</h6>
                             <ul>
                                 <li>
@@ -54,12 +54,12 @@ const foodter = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className="col-lg-3">
+                    <div className="col-lg-3 col-md-12 .col-sm-12 col-xs-12">
                         <div className="footer__widget">
                             <h6>Khuyễn mãi &  ưu đãi </h6>
                             <p>Đăng ký nhận thông tin tại đây</p>
                             <form action="#">
-                                <div>
+                                <div className="input-group">
                                     <input type="Text" placeholder="Nhập email vào" />
                                     <button type="submit" className="button-submit">
                                         Đăng ký
@@ -82,9 +82,9 @@ const foodter = () => {
 
                 </div>
             </div>
-        </foodter>
+        </footer>
     </>
     );
 };
 
-export default memo(foodter);
+export default memo(footer);
