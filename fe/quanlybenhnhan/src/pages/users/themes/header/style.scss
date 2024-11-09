@@ -13,16 +13,19 @@
         align-content: center;
         padding: 10px 0 13px;
         list-style: none;
-        li{
+
+        li {
             font-size: 14px;
             color: #008874;
             display: flex;
             align-items: center;
-            column-gap:20px;
+            column-gap: 20px;
         }
-        li:first-child{
+
+        li:first-child {
             position: relative;
-            &:after{
+
+            &:after {
                 position: absolute;
                 right: -10px;
                 top: 1px;
@@ -71,14 +74,19 @@
         }
     }
 }
-.header__logo{
+
+.header__logo {
     padding: 15px 0;
 }
-.header__menu{
+
+.header__menu {
     padding: 24px 0;
-    li{
+
+    li {
         list-style: none;
-        a{
+        position: relative;
+
+        a {
             text-decoration: none;
             font-size: 14px;
             color: #044a40;
@@ -90,35 +98,71 @@
             display: block;
         }
     }
-    ul{
+
+    li:hover .header__menu_dropdown {
+        opacity: 1;
+        visibility: visible;
+        color: whitesmoke;
+    }
+
+    ul {
         display: flex;
         justify-content: space-between;
-        .active a{
+
+        .active a {
             color: #008874;
-           
+
+        }
+
+        .header__menu_dropdown {
+            background: #222;
+            display: block;
+            position: absolute;
+            width: 180px;
+            z-index: 9;
+            padding: 5px 0;
+            transition: all, 0.3s;
+            opacity: 0;
+            visibility: hidden;
+            li{
+                a{
+                    text-transform: capitalize;
+                    color: #f5f5f5;
+                    font-weight: 400;
+                    padding: 5px 15px;
+                }
+                :hover{
+                    color:#008874 ;
+                }
+            }
         }
     }
 }
-.header__cart{
+
+.header__cart {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 24px 0;
-    ul{
+
+    ul {
         display: flex;
-   
+
         margin-right: 25px;
-        li{
+
+        li {
             list-style: none;
             position: relative;
             margin-left: 20px;
-            svg{
+
+            svg {
                 font-size: 25px;
                 color: #000;
             }
-            span{
+
+            span {
                 color: #f5f5f5;
-                background:#008874 ;
+                background: #008874;
                 position: absolute;
                 height: 20px;
                 width: 20px;
