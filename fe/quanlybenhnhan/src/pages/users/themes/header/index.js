@@ -2,6 +2,7 @@ import React, { memo, useState } from "react";
 import "./style.scss";
 import { BsFacebook, BsInstagram, BsBezier2, BsFillHouseDoorFill, BsMailbox } from "react-icons/bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { IoLogoInstagram,IoLogoLinkedin } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { formater } from '../../../../utils/fomater';
 import { ROUTERS } from '../../../../utils/routers';
@@ -51,7 +52,7 @@ const Header = () => {
                             <ul>
                                 <li><Link to=""><BsFacebook /></Link></li>
                                 <li><Link to=""><BsInstagram /></Link></li>
-                                <li><Link to=""><BsBezier2 /></Link></li>
+                                <li><Link to=""><IoLogoLinkedin /></Link></li>
                                 <li><Link to=""><BsFillHouseDoorFill /></Link><span>Đăng nhập</span></li>
                             </ul>
                         </div>
@@ -71,8 +72,22 @@ const Header = () => {
                                 {
                                     menus?.map((menu, menuKey) => {
                                         return (  // Cần trả về giá trị JSX trong map()
-                                            <li key={menuKey} className={menuKey===0?"active":""}>
+                                            <li key={menuKey} className={menuKey === 0 ? "active" : ""}>
                                                 <Link to={menu?.path}>{menu?.name}</Link>
+                                                {
+                                                    menu.child && (
+                                                        <ul className="header__menu_dropdown">
+                                                            {
+                                                                menu.child.map((chilItme, chilKey) => (
+                                                                    <li key={'${menuKey}-${childKey}'}>
+                                                                        <Link to={chilItme.path}>{chilItme.name}</Link>
+                                                                    </li>
+                                                                ))
+                                                            }
+
+                                                        </ul>
+                                                    )
+                                                }
                                             </li>
                                         );
                                     })
@@ -88,7 +103,7 @@ const Header = () => {
                     <div className="col-xl-3">
                         <div className="header__cart">
                             <div className="header__cart__price">
-                                <span>{formater(111)}</span>
+                                <span>{formater(111222)}</span>
                             </div>
                             <ul>
                                 <li>
