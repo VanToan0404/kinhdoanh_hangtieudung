@@ -2,12 +2,14 @@ import React, { memo, useState } from "react";
 import "./style.scss";
 import { BsFacebook, BsInstagram, BsBezier2, BsFillHouseDoorFill, BsMailbox } from "react-icons/bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { IoLogoInstagram,IoLogoLinkedin } from "react-icons/io";
+import { IoLogoInstagram, IoLogoLinkedin } from "react-icons/io";
+import { CiMenuBurger } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { formater } from '../../../../utils/fomater';
 import { ROUTERS } from '../../../../utils/routers';
 
 const Header = () => {
+    const [isShowCategories, SetShowCategories] = useState(true);
     const [menus, setMEnus] = useState([
         {
             name: "Trang chủ",
@@ -114,6 +116,41 @@ const Header = () => {
                     </div>
                 </div>
             </div>
+            <div className="container">
+                <div className="row hero__categories__container">
+                    <div className="col-lg-3 hero__categories">
+                        <div className="hero__categories__all" onClick={()=> SetShowCategories(!isShowCategories)}>
+                            <CiMenuBurger />Danh sách sản phẩm
+                        </div>
+                        {
+                            isShowCategories && (
+                                <ul className={isShowCategories ? "":"hidden"}>
+                                    <li>
+                                        <Link to="">Thịt tươi</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="">Rau củ</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="">Nước trái cây</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="">Trái cây</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="">Hải sản</Link>
+                                    </li>
+                                </ul>
+                            )
+                        }
+
+                    </div>
+                    <div className="col-lg-9">
+                        Phải
+                    </div>
+                </div>
+            </div>
+
         </>
     );
 };

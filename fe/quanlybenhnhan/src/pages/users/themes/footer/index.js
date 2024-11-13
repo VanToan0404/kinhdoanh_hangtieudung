@@ -9,7 +9,7 @@ const footer = () => {
         <footer className="footer">
             <div className="container">
                 <div className="row">
-                    <div className="col-lg-3 col-md-6 .col-sm-6 col-xs-12">
+                    <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div className="footer__about">
                             <h1 className="footer__about__logo">
                                 SIVI shop
@@ -27,7 +27,7 @@ const footer = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className="col-lg-6 col-md-6 .col-sm-6 col-xs-12">
+                    <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div className="footer__widget">
                             <h6>Cữa hàng</h6>
                             <ul>
