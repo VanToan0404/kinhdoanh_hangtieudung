@@ -1,5 +1,6 @@
 @use "sass:map";
 // @import "style/pages/theme";
+$banenrImg: "/assets/users/images/hero/1.png";
 
 .header__top {
     background: #f5f5f5;
@@ -199,11 +200,13 @@
             margin-right: 5px;
             font-weight: bold;
         }
-        svg{
+
+        svg {
             font-size: 20px;
-            
+
         }
     }
+
     ul {
         border: 1px solid #ebebee;
         position: absolute;
@@ -214,15 +217,16 @@
 
         li {
             list-style: none;
-          a{
-            text-decoration: none;
-            color: transparent;
-            font-size: 16px;
-            color: #008874;
-            line-height: 39px;
-            display: block;
-            padding-left: 40px;
-          }
+
+            a {
+                text-decoration: none;
+                color: transparent;
+                font-size: 16px;
+                color: #008874;
+                line-height: 39px;
+                display: block;
+                padding-left: 40px;
+            }
 
             &:hover {
                 background: #f7ffff;
@@ -232,9 +236,146 @@
                 }
             }
         }
-        &.hidden{
+
+        &.hidden {
             opacity: 0;
 
         }
     }
+
+}
+
+.hero__search__container {
+
+
+    .hero__search__form {
+        margin-bottom: 30px;
+        float: left;
+        height: 50px;
+        width: 610px;
+        padding-left: 15px;
+    }
+
+    input {
+        border: 1px solid #ebebeb;
+        height: 48px; // Đặt chiều cao cho input
+        font-size: 16px;
+        color: #b2b2b2;
+        padding-left: 20px;
+        border: none;
+        width: 70%;
+
+        form {
+            display: flex;
+            align-items: center;
+        }
+
+
+        &:focus {
+            outline: none;
+            border-color: #008874; // Đổi màu viền khi focus (nếu muốn)
+        }
+    }
+
+    button {
+        font-size: 14px;
+        color: #fff;
+        font-weight: 800;
+        text-transform: uppercase;
+        display: inline-block;
+        padding: 16px 30px 17px; // Điều chỉnh khoảng cách bên trong nút
+        background: #008874;
+        border: none;
+        height: 100%;
+        cursor: pointer;
+
+        &:hover {
+            background: #006b5b;
+        }
+    }
+
+    .hero__search__phone {
+        display: flex;
+        align-items: center;
+
+        .hero__search__phone__icon {
+            font-size: 25px;
+            padding: 10px;
+            background: #f5f5f5;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 50%;
+            float: left;
+            margin-left: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #006b5b;
+        }
+
+        .hero__search__phone__text {
+            display: inline-block;
+
+            p {
+                color: #006b5b;
+                font-weight: bold;
+                margin-bottom: 5px;
+
+            }
+
+            span {
+                color: #006b5b;
+                font-size: 14px;
+            }
+        }
+
+    }
+
+    .hero__item {
+        width: 100%;
+        background-image: url($banenrImg);
+        background-size: cover;
+        height: 410px;
+        display: flex;
+        align-items: center;
+
+        .hero__text {
+            padding-left: 75px;
+        }
+        span{
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: #006b5b;
+
+        }
+        h2{
+            font-size: 45px;
+            text-transform: uppercase;
+            font-weight: 700;
+            line-height: 52px;
+            color: #044a40;
+            margin: 10px 0;
+        }
+        p{
+            font-size: 16px;
+            color: #6f6f6f;
+            font-weight: 400;
+            line-height: 26px;
+            margin: 0 0 15px 0;
+        }
+        a{
+            display: inline-block;
+            font-size: 14px;
+            padding: 10px 28px 10px;
+            color: #ffff;
+            text-transform: uppercase;
+            font-weight: 700;
+            background: #006b5b;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+    }
+
 }

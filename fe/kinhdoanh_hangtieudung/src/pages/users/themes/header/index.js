@@ -1,7 +1,7 @@
 import React, { memo, useState } from "react";
 import "./style.scss";
 import { BsFacebook, BsInstagram, BsBezier2, BsFillHouseDoorFill, BsMailbox } from "react-icons/bs";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { AiOutlineShoppingCart, AiFillPhone } from "react-icons/ai";
 import { IoLogoInstagram, IoLogoLinkedin } from "react-icons/io";
 import { CiMenuBurger } from "react-icons/ci";
 import { Link } from "react-router-dom";
@@ -119,12 +119,12 @@ const Header = () => {
             <div className="container">
                 <div className="row hero__categories__container">
                     <div className="col-lg-3 hero__categories">
-                        <div className="hero__categories__all" onClick={()=> SetShowCategories(!isShowCategories)}>
+                        <div className="hero__categories__all" onClick={() => SetShowCategories(!isShowCategories)}>
                             <CiMenuBurger />Danh sách sản phẩm
                         </div>
                         {
                             isShowCategories && (
-                                <ul className={isShowCategories ? "":"hidden"}>
+                                <ul className={isShowCategories ? "" : "hidden"}>
                                     <li>
                                         <Link to="">Thịt tươi</Link>
                                     </li>
@@ -145,8 +145,34 @@ const Header = () => {
                         }
 
                     </div>
-                    <div className="col-lg-9">
-                        Phải
+                    <div className="col-lg-9 hero__search__container">
+                        <div className="hero__search">
+                            <div className="hero__search__form">
+                                <form>
+                                    <input type="text" placeholder="Bạn đang cần gì?" />
+                                    <button type="submit" className="site-btn">Tìm kiếm</button>
+                                </form>
+                            </div>
+                            <div className="hero__search__phone">
+                                <div className="hero__search__phone__icon">
+                                    <AiFillPhone />
+                                </div>
+                                <div className="hero__search__phone__text">
+                                    <p>0345687435</p>
+                                    <span>Hỗ trợ 24/7</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="hero__item">
+                            <div className="hero__text">
+                                <span>Trái cây tươi</span>
+                                <h2>Rau quả  <br/>
+                                Sạch 100%
+                                </h2>
+                                <p>Miễn phí giao hàng tận nơi</p>
+                                <Link to="" className="primary-btn">Mua ngay</Link>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
