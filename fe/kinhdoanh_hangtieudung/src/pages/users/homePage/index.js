@@ -1,8 +1,16 @@
 import React from 'react';
+import { formater } from '../../../utils/fomater';
+import { BiShoppingBag } from "react-icons/bi";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import "./style.scss";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
+
+import { Link } from 'react-router-dom';
+import { HiOutlineEye } from "react-icons/hi2";
+
+import banner_sale1Img from "../../../assets/users/images/sale/banner_sale1.png"
+import banner_sale2Img from "../../../assets/users/images/sale/banner_sale2.png"
 // Đường dẫn hình ảnh của bạn
 import Cal1Img from '../../../assets/users/images/categories/cart_1.png';
 import Cal2Img from '../../../assets/users/images/categories/cart_2.png';
@@ -11,7 +19,7 @@ import Cal4Img from '../../../assets/users/images/categories/cart_4.png';
 import Cal5Img from '../../../assets/users/images/categories/cart_5.png';
 import Cal6Img from '../../../assets/users/images/categories/cart_6.png';
 import Cal7Img from '../../../assets/users/images/categories/cart_7.png';
-//Đường dẫn hình ảnh
+// Đường dẫn hình ảnh
 import featured1 from '../../../assets/users/images/featured/featured1.png';
 import featured2 from '../../../assets/users/images/featured/featured2.png';
 import featured3 from '../../../assets/users/images/featured/featured3.png';
@@ -44,14 +52,40 @@ const MyComponent = () => {
       title: "Toàn bộ",
       products: [
         { img: featured1, name: "Thịt bò", price: 20000 },
-        { img: featured2, name: "Thịt gà", price: 15000 }
+        { img: featured2, name: "Thịt gà", price: 15000 },
+        { img: featured3, name: "Thịt gà", price: 15000 },
+        { img: featured7, name: "Thịt gà", price: 15000 },
+        { img: featured5, name: "Thịt gà", price: 15000 },
       ]
     },
     freshMeat: {
       title: "Thịt tươi",
       products: [
         { img: featured3, name: "Thịt lợn", price: 18000 },
-        { img: featured4, name: "Thịt cừu", price: 25000 }
+        { img: featured4, name: "Thịt cừu", price: 25000 },
+        { img: featured6, name: "Thịt cừu", price: 25000 },
+        { img: featured1, name: "Thịt cừu", price: 25000 },
+        { img: featured2, name: "Thịt cừu", price: 25000 }
+      ]
+    },
+    fruits: {
+      title: "Trái cây",
+      products: [
+        { img: featured5, name: "Thịt lợn", price: 18000 },
+        { img: featured4, name: "Thịt cừu", price: 25000 },
+        { img: featured7, name: "Thịt cừu", price: 25000 },
+        { img: featured3, name: "Thịt cừu", price: 25000 },
+        { img: featured2, name: "Thịt cừu", price: 25000 }
+      ]
+    },
+    fruitss: {
+      title: "Bánh mỳ",
+      products: [
+        { img: featured5, name: "Thịt lợn", price: 18000 },
+        { img: featured3, name: "Thịt cừu", price: 25000 },
+        { img: featured2, name: "Thịt cừu", price: 25000 },
+        { img: featured3, name: "Thịt cừu", price: 25000 },
+        { img: featured1, name: "Thịt cừu", price: 25000 }
       ]
     },
   };
@@ -63,18 +97,30 @@ const MyComponent = () => {
     Object.keys(data).forEach((key, index) => {
       tablist.push(<Tab key={index}>{data[key].title}</Tab>);
 
-      // Tạo TabPanel cho mỗi nhóm sản phẩm
+      const tabPanelItems = [];
+      data[key].products.forEach((item, j) => {
+        tabPanelItems.push(
+          <div className="col-lg-3" key={j}>
+            <div className="Featured__item">
+              <div className="Featured__item__pic" style={{ backgroundImage: `url(${item.img})` }}>
+                <ul className="Featured__item__pic__hover">
+                  <li><HiOutlineEye /></li>
+                  <li><BiShoppingBag /></li>
+                </ul>
+              </div>
+              <div className="Featured__item__text">
+                <h6>
+                  <Link to="#">{item.name}</Link>
+                </h6>
+                <h5>{formater(item.price)}</h5>
+              </div>
+            </div>
+          </div>
+        );
+      });
       tabPanels.push(
         <TabPanel key={index}>
-          <div className="row">
-            {data[key].products.map((item, productIndex) => (
-              <div key={productIndex} className="product-item">
-                <img src={item.img} alt={item.name} />
-                <h3>{item.name}</h3>
-                <p>{item.price} VND</p>
-              </div>
-            ))}
-          </div>
+          <div className="row">{tabPanelItems}</div>
         </TabPanel>
       );
     });
@@ -115,6 +161,20 @@ const MyComponent = () => {
         </div>
       </div>
       {/* Featured End */}
+      {/*Banner Begin*/}
+      <div className='container'>
+        <div className='banner'>
+          <div className='container__pic'>
+            <img src={banner_sale1Img} alt='banner' />
+            
+          </div>
+          <div className='container__pic'>
+            <img src={banner_sale2Img} alt='banner' />
+            
+          </div>
+        </div>
+      </div>
+      {/*Banner End*/}
     </>
   );
 };
